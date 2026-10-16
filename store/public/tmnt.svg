@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #333333; } /* Fondo Gris Oscuro */
+      .g { fill: #5DAA3E; } /* Piel Verde Mutante */
+      .r { fill: #D32F2F; } /* Rojo (Antifaz y protecciones) */
+      .s { fill: #2E5C1E; } /* Verde Oscuro (Caparazón trasero) */
+      .c { fill: #FFCA28; } /* Amarillo (Pecho/Plastrón) */
+      .l { fill: #5D4037; } /* Café (Cinturón) */
+      .u { fill: #B0BEC5; } /* Gris Plata (Hebilla) */
+      .w { fill: #FFFFFF; } /* Blanco (Ojos) */
+      .b { fill: #000000; } /* Negro (Pupilas) */
+    </style>
+  </defs>
+  
+  <!-- Fondo Gris -->
+  <rect class="bg" x="0" y="0" width="16" height="16"/>
+
+  <!-- Piel (Cabeza, cuerpo, brazos y piernas) -->
+  <g class="g">
+    <rect x="6" y="1" width="5" height="1"/>
+    <rect x="5" y="2" width="7" height="1"/>
+    <rect x="5" y="5" width="7" height="1"/>
+    <rect x="7" y="6" width="3" height="1"/>
+    <rect x="6" y="7" width="3" height="1"/>
+    <rect x="12" y="7" width="1" height="2"/> <!-- Brazo derecho -->
+    <rect x="5" y="8" width="4" height="1"/>
+    <rect x="5" y="9" width="4" height="1"/> 
+    <rect x="11" y="10" width="2" height="1"/> <!-- Mano derecha -->
+    <rect x="5" y="11" width="1" height="1"/> <!-- Mano izquierda -->
+    <rect x="7" y="11" width="4" height="1"/> <!-- Cintura -->
+    <rect x="6" y="13" width="2" height="1"/>
+    <rect x="9" y="13" width="2" height="1"/>
+    <rect x="5" y="14" width="3" height="1"/> <!-- Pie izquierdo -->
+    <rect x="9" y="14" width="3" height="1"/> <!-- Pie derecho -->
+  </g>
+
+  <!-- Antifaz y Protecciones (Coderas/Rodilleras) -->
+  <g class="r">
+    <rect x="4" y="3" width="9" height="1"/>
+    <rect x="4" y="4" width="1" height="1"/>
+    <rect x="7" y="4" width="2" height="1"/>
+    <rect x="11" y="4" width="2" height="1"/>
+    <rect x="14" y="4" width="2" height="1"/> <!-- Nudo del antifaz -->
+    <rect x="15" y="5" width="1" height="1"/> <!-- Cola del antifaz -->
+    <rect x="12" y="9" width="1" height="1"/> <!-- Codera derecha -->
+    <rect x="5" y="10" width="1" height="1"/> <!-- Codera izquierda -->
+    <rect x="6" y="12" width="2" height="1"/> <!-- Rodillera izquierda -->
+    <rect x="9" y="12" width="2" height="1"/> <!-- Rodillera derecha -->
+  </g>
+
+  <!-- Ojos (Mirando a la derecha) -->
+  <g class="w">
+    <rect x="5" y="4" width="1" height="1"/>
+    <rect x="9" y="4" width="1" height="1"/>
+  </g>
+  <g class="b">
+    <rect x="6" y="4" width="1" height="1"/>
+    <rect x="10" y="4" width="1" height="1"/>
+  </g>
+
+  <!-- Caparazón Trasero -->
+  <g class="s">
+    <rect x="4" y="7" width="2" height="1"/>
+    <rect x="3" y="8" width="2" height="2"/>
+    <rect x="2" y="10" width="3" height="1"/>
+    <rect x="3" y="11" width="2" height="1"/>
+  </g>
+
+  <!-- Pecho (Plastrón Frontal) -->
+  <g class="c">
+    <rect x="9" y="7" width="2" height="3"/>
+  </g>
+
+  <!-- Cinturón -->
+  <g class="l">
+    <rect x="6" y="10" width="3" height="1"/>
+    <rect x="10" y="10" width="1" height="1"/>
+  </g>
+
+  <!-- Hebilla del cinturón -->
+  <rect class="u" x="9" y="10" width="1" height="1"/>
+</svg>

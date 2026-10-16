@@ -1,0 +1,35 @@
+.logoContainer {
+  display: flex;
+  align-items: center;
+  font-family: Impact, Anton, sans-serif;
+  font-size: 3.0rem; /* Aumentado 2 puntos aprox */
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: #000;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.faceIcon {
+  height: 1em; /* Se ajusta automaticamente al tamaño de la letra */
+  margin: 0 4px;
+  transition: transform 0.3s ease;
+}
+
+.logoContainer:hover {
+  transform: scale(1.05); /* Zoom ligero */
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15); /* Efecto 3D en las letras */
+}
+
+.logoContainer:hover .faceIcon {
+  transform: rotate(-10deg) scale(1.1); /* La carita hace un gesto divertido */
+}
+
+.logoEyes {
+  transition: all 0.3s ease;
+}
+
+.logoContainer:hover .logoEyes {
+  fill: var(--primary); /* Los ojos brillan en rojo */
+  filter: drop-shadow(0px 0px 4px var(--primary)); 
+}

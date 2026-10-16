@@ -1,0 +1,184 @@
+.carouselContainer {
+  width: 100%;
+  padding: 12px 40px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* DESKTOP VERISON */
+.desktopCarousel {
+  display: flex;
+  width: 100%;
+}
+
+.carouselTrack {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.marqueeContent {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 0 16px;
+  width: max-content;
+  animation: scrollLeft 40s linear infinite;
+}
+
+/* Desktop hover pause */
+@media (hover: hover) and (pointer: fine) {
+  .carouselTrack:hover .marqueeContent {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* MOBILE VERSION */
+.mobileCarousel {
+  display: none;
+}
+
+.mobileTrack {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 16px;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  width: 100%;
+  align-items: center;
+}
+
+.mobileTrack::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.scrollArrow {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  border: none;
+  color: white;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrollArrowLeft {
+  left: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  padding: 0 20px 0 10px;
+}
+
+.scrollArrowRight {
+  right: 0;
+  background: linear-gradient(to left, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  padding: 0 10px 0 20px;
+}
+
+.scrollArrow svg {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
+}
+
+/* RESPONSIVE TOGGLE */
+@media (max-width: 768px) {
+  .carouselContainer {
+    padding: 12px 0; /* Remove side padding on mobile for full width scroll */
+  }
+  .desktopCarousel {
+    display: none;
+  }
+  .mobileCarousel {
+    display: flex;
+    width: 100%;
+    position: relative;
+    align-items: center;
+  }
+}
+
+/* BRAND ITEMS */
+.brandItem {
+  flex: 0 0 auto;
+  height: 60px;
+  padding: 6px 20px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  background: transparent;
+}
+
+.brandItem.selected {
+  background: transparent;
+  border-color: var(--primary, #de0000);
+  box-shadow: 0 0 15px rgba(222, 0, 0, 0.4);
+}
+
+.brandLogo {
+  height: 100%;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
+}
+
+.brandItemText {
+  flex: 0 0 auto;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 10px 24px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  background: transparent;
+}
+
+.brandItemText.selected {
+  background: transparent;
+  border-color: var(--primary, #de0000);
+  box-shadow: 0 0 15px rgba(222, 0, 0, 0.4);
+}
+
+/* Hover effects only for devices with a mouse (prevents sticky scale bugs on touch) */
+@media (hover: hover) and (pointer: fine) {
+  .brandItem:hover {
+    transform: scale(1.07);
+    background: transparent;
+    border-color: #fff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  }
+  
+  .brandItem.selected:hover {
+    border-color: var(--primary, #de0000);
+    transform: scale(1.07);
+  }
+
+  .brandItemText:hover {
+    transform: scale(1.07);
+    background: transparent;
+    border-color: #fff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  }
+}
+
+

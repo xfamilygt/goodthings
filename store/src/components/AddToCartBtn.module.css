@@ -1,0 +1,95 @@
+.addBtn {
+  width: 100%;
+  margin-top: 0.5rem; /* Ajustado por el nuevo padding de productInfo */
+  padding: 0.7rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px; /* Reducido de 8px */
+  font-weight: 700;
+  font-size: 0.9rem; /* Reducido ~2px */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.addBtn:hover:not(.disabled) {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3); /* asumiendo rojo primario */
+}
+
+.addBtn:active:not(.disabled) {
+  transform: translateY(0);
+}
+
+.hoveredBtn:not(.disabled) {
+  background: white;
+  color: #1a1d24; /* Texto oscuro neutro para que combine con cualquier fondo */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hoveredBtn:hover:not(.disabled) {
+  background: #f8f8f8;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btnIcon {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.disabled {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--foreground-muted);
+  cursor: not-allowed;
+}
+
+.disabled .btnIcon {
+  display: none;
+}
+
+.mobileText {
+  display: none;
+}
+
+.desktopText {
+  display: inline;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .addBtn {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+  
+  .btnIcon {
+    font-size: 1rem;
+    /* En pantallas muy pequeñas, si el texto es muy largo, podríamos ocultar el ícono, 
+       pero por ahora solo lo hacemos un poco más pequeño */
+  }
+
+  .mobileText {
+    display: inline;
+  }
+  
+  .desktopText {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .addBtn {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    gap: 0.3rem;
+  }
+  .btnIcon {
+    display: none; /* Ocultar el ícono '+' en pantallas muy pequeñas para ahorrar espacio */
+  }
+}

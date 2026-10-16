@@ -1,0 +1,739 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #FFFFFF; /* Fondo blanco */
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-size: 2.8rem;
+  font-weight: 900;
+  font-style: italic; /* Letras inclinadas como la imagen */
+  color: #000000;
+  letter-spacing: -0.05em;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15); /* Efecto de relieve 3D sutil */
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLink {
+  font-weight: 500;
+  color: #000000; /* Enlaces en negro */
+  transition: all 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--primary);
+}
+
+.cartBtn {
+  background: var(--surface-hover);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cartBtn:hover {
+  background: var(--primary);
+  transform: translateY(-2px);
+}
+
+.heroWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.heroBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at center, rgba(222, 0, 0, 0.15) 0%, rgba(15, 17, 21, 0.8) 100%),
+    url('/hero-pattern.png');
+  background-repeat: no-repeat, repeat;
+  background-size: 100% 100%, 700px;
+  background-position: center, top left;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.heroContent {
+  max-width: 800px;
+  text-align: center;
+  z-index: 1;
+}
+
+.title {
+  font-size: 5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--foreground-muted);
+  margin-bottom: 3rem;
+  font-family: var(--font-body);
+}
+
+.ctaGroup {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.primaryBtn {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 4px 15px var(--primary-glow);
+}
+
+.primaryBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px var(--primary-glow);
+}
+
+.secondaryBtn {
+  background: transparent;
+  color: white;
+  border: 1px solid var(--border);
+}
+
+.secondaryBtn:hover {
+  background: var(--surface-hover);
+  border-color: var(--foreground-muted);
+}
+
+/* Products Section */
+.productsSection {
+  padding: 5rem 4rem;
+  background: #ffffff;
+  color: #0f1115; /* Asegurar que el texto se lea sobre blanco */
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.productCard {
+  border-radius: 0;
+  padding: 2px; /* Aumentado a 2px en web */
+  background: #1a1d24; /* Fondo oscuro sólido */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--foreground); /* Texto claro sobre fondo oscuro */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* Quitamos el gap para controlar el padding en productInfo */
+  cursor: pointer;
+}
+
+.productCard:hover {
+  transform: translateY(-10px);
+}
+
+.hoverDefault:hover {
+  border-color: #b91c1c;
+  background-color: #b91c1c;
+  box-shadow: 0 10px 30px rgba(185, 28, 28, 0.2);
+}
+
+.hoverBorderOnly:hover {
+  border-color: #b91c1c;
+  /* Usamos box-shadow sólida para engrosar visualmente el borde sin causar saltos en el layout */
+  box-shadow: 0 0 0 1px #b91c1c, 0 10px 30px rgba(185, 28, 28, 0.2);
+}
+
+.hoverExclusive:hover {
+  border-color: #39ff14; /* Borde verde neón brillante */
+  background: 
+    /* Reflejo diagonal tipo cristal/espejo */
+    linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0.1) 30%, transparent 35%),
+    /* Resplandor radial verde intenso en el centro hacia oscuro en los bordes */
+    radial-gradient(circle at 50% 50%, #16a34a 0%, #022c22 90%);
+  box-shadow: 0 0 30px rgba(57, 255, 20, 0.4), inset 0 0 20px rgba(34, 197, 94, 0.3);
+}
+
+.hoverPreventa:hover {
+  border-color: #ffffff; /* Margen blanco */
+  background: linear-gradient(135deg, #002244 0%, #0056b3 100%); /* Fondo azul DC */
+  box-shadow: 0 10px 30px rgba(0, 86, 179, 0.3);
+}
+
+.productImage {
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--background);
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem; /* Reducido para que el texto alt no desborde si la imagen falla */
+  color: var(--foreground-muted);
+  overflow: hidden;
+  position: relative;
+}
+
+.productImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.outOfStock img {
+  filter: grayscale(40%) opacity(0.75);
+}
+
+.outOfStockSticker {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 5;
+  background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  transform: rotate(3deg);
+  pointer-events: none;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.6rem; /* Agregamos el padding aquí para el texto */
+  transition: background-color 0.3s ease; /* Transición suave */
+  flex: 1; /* Ocupar el resto del alto de la tarjeta */
+}
+
+.productCategory {
+  font-size: 0.65rem; /* Reducido ~2px más */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: white;
+  font-weight: 400; /* Sin negrita */
+}
+
+.productName {
+  font-size: 1.05rem; /* Reducido ~2px */
+  font-weight: 600;
+}
+
+.productPrice {
+  font-size: 0.95rem; /* Reducido ~2px */
+  color: white;
+}
+
+.stockStatusAvailable {
+  font-size: 0.7rem; /* Reducido */
+  font-weight: 600;
+  color: #16a34a;
+  background: rgba(22, 163, 74, 0.12);
+  border: 1px solid rgba(22, 163, 74, 0.25);
+  padding: 0.2rem 0.55rem;
+  border-radius: 12px;
+  width: fit-content;
+}
+
+.stockStatusLow {
+  font-size: 0.7rem; /* Reducido */
+  font-weight: 700;
+  color: #ea580c;
+  background: rgba(234, 88, 12, 0.15);
+  border: 1px solid rgba(234, 88, 12, 0.3);
+  padding: 0.2rem 0.55rem;
+  border-radius: 12px;
+  width: fit-content;
+}
+
+.stockStatusOut {
+  font-size: 0.7rem; /* Reducido */
+  font-weight: 700;
+  color: #dc2626;
+  background: rgba(220, 38, 38, 0.15);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  padding: 0.2rem 0.55rem;
+  border-radius: 12px;
+  width: fit-content;
+}
+
+.variantCount {
+  font-size: 0.65rem; /* Reducido */
+  color: var(--secondary);
+  background: rgba(59, 130, 246, 0.1);
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+  width: fit-content;
+  font-weight: 600;
+}
+
+.mobileText {
+  display: none;
+}
+
+.desktopText {
+  display: inline;
+}
+
+/* VIP Banner */
+.vipBanner {
+  background: linear-gradient(135deg, var(--surface) 0%, rgba(222, 0, 0, 0.1) 100%);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 3rem 4rem;
+  margin: 4rem auto;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.vipContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 1;
+}
+
+.vipContent h2 {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.vipContent p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.vipBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background-color: #25D366;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  width: fit-content;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.vipBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+  color: white;
+}
+
+.vipQr {
+  border-radius: 12px;
+  border: 2px solid var(--primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  background: white;
+}
+
+.vipQr:hover {
+  transform: scale(1.05);
+}
+
+.vipQr img {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Footer */
+.footer {
+  margin-top: auto;
+  padding: 4rem 4rem 2rem;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 0 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footerLeftSection {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.footerCategories {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerCategories h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: 1.2rem;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0px;
+}
+
+.footerCategories ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.footerCategories a {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.3px;
+  transition: opacity 0.2s ease;
+}
+
+.footerCategories a:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+.footerBrand h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.footerBrand p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.footerSocials h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0;
+  background: transparent;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.socialIcon:hover {
+  transform: translateY(-3px);
+  opacity: 0.8;
+}
+
+.footerBottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   Responsive Design
+   ========================================= */
+
+/* Tablet (< 1024px) */
+@media (max-width: 1024px) {
+  .header {
+    padding: 1.5rem 2rem;
+  }
+
+  .hero {
+    padding: 4rem 2rem;
+  }
+
+  .title {
+    font-size: 4rem;
+  }
+
+  .productsSection {
+    padding: 4rem 2rem;
+  }
+
+  .productGrid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+
+  .footer {
+    padding: 3rem 2rem 2rem;
+  }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .cartBtn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .ctaGroup {
+    flex-direction: column;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+  }
+
+  .productsSection {
+    padding: 3rem 1rem;
+  }
+
+  .productGrid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+
+  .productCard {
+    padding: 0px; /* Reducido el borde en movil */
+    gap: 0;
+  }
+
+  .mobileText {
+    display: inline;
+  }
+  
+  .desktopText {
+    display: none;
+  }
+
+  .vipBanner {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    gap: 2rem;
+    margin: 2rem 1rem;
+  }
+  
+  .vipContent h2 {
+    font-size: 2rem;
+  }
+  
+  .vipBtn {
+    margin: 0 auto;
+  }
+  
+  .vipQr img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .productImage {
+    font-size: 2rem;
+    border-radius: 0;
+  }
+
+  .productImage img {
+    border-radius: 0;
+  }
+
+  .productName {
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+
+  .productPrice {
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+  
+  .productCategory {
+    font-size: 0.7rem;
+  }
+  
+  .stockStatusAvailable,
+  .stockStatusLow,
+  .stockStatusOut,
+  .variantCount {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.4rem;
+  }
+  
+  .outOfStockSticker {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .footer {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .footerContent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footerLeftSection {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .footerCategories ul {
+    align-items: center;
+  }
+
+  .socialIcons {
+    justify-content: center;
+  }
+
+  .floatingWhatsapp {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Small Mobile (< 480px) */
+@media (max-width: 480px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .navLink {
+    font-size: 0.9rem;
+  }
+}
+
+/* Floating WhatsApp Button */
+.floatingWhatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.floatingWhatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px var(--primary-glow);
+  border-color: rgba(255, 255, 255, 0.3);
+}
