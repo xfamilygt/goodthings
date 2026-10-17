@@ -2,21 +2,22 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-top: 80px; /* For header */
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 2rem 2rem 2rem;
+  padding: 2.5rem 1.5rem;
+  background-color: #ffffff;
+  color: #111827;
 }
 
 .productLayout {
   display: flex;
-  gap: 3rem;
+  gap: 3.5rem;
   align-items: flex-start;
 }
 
 /* Left: Images */
 .imageSection {
-  flex: 1.5;
+  flex: 1.2;
   display: flex;
   gap: 1rem;
 }
@@ -31,19 +32,23 @@
 .thumbBtn {
   width: 100%;
   aspect-ratio: 1;
-  background-color: var(--surface);
-  border: 2px solid transparent;
-  border-radius: 4px;
+  background-color: #f7f7f8;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 6px;
   overflow: hidden;
   cursor: pointer;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s ease;
 }
+
 .thumbBtn.active {
-  border-color: var(--secondary);
+  border-color: #002855;
+  box-shadow: 0 0 0 2px rgba(0, 40, 85, 0.2);
 }
+
 .thumbImg {
   width: 100%;
   height: 100%;
@@ -52,13 +57,14 @@
 
 .mainImageContainer {
   flex: 1;
-  background-color: #000;
-  border-radius: 8px;
+  background-color: #f7f7f8;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 1;
+  aspect-ratio: 3 / 4;
   position: relative;
 }
 
@@ -73,36 +79,41 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  background-color: var(--background);
 }
 
 .ageRating {
   display: inline-block;
   border: 1px solid var(--border);
-  padding: 4px 8px;
-  border-radius: 40px;
+  padding: 4px 10px;
+  border-radius: 9999px;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 1rem;
   align-self: flex-start;
+  text-transform: uppercase;
 }
 
 .title {
-  font-size: 2rem;
-  line-height: 1.1;
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1.15;
   margin: 0 0 0.5rem 0;
+  color: #002855;
+  letter-spacing: -0.02em;
 }
 
 .sku {
-  color: var(--foreground-muted);
+  color: #6b7280;
   font-size: 0.85rem;
-  margin: 0 0 1.5rem 0;
+  font-weight: 500;
+  margin: 0 0 1.25rem 0;
 }
 
 .price {
-  font-size: 1.5rem;
-  font-weight: 800;
-  margin: 0 0 1rem 0;
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: #002855;
+  margin: 0 0 1.5rem 0;
 }
 
 .stockStatus {
@@ -111,49 +122,30 @@
   gap: 0.5rem;
   font-size: 0.85rem;
   margin-bottom: 1.5rem;
+  font-weight: 600;
 }
+
 .stockDot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #10b981; /* green */
-}
-.outOfStockDot {
-  background-color: #ef4444; /* red */
+  background-color: #10b981;
 }
 
-.addToCart {
-  background-color: var(--secondary);
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 1rem;
-  border-radius: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem;
-  transition: background-color 0.2s;
-  width: 100%;
-}
-.addToCart:hover:not(:disabled) {
-  background-color: #2563eb;
-}
-.addToCart:disabled {
-  background-color: var(--border);
-  color: var(--foreground-muted);
-  cursor: not-allowed;
+.outOfStockDot {
+  background-color: #ef4444;
 }
 
 /* Accordions */
 .accordionList {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid #e5e7eb;
   display: flex;
   flex-direction: column;
+  margin-top: 1.5rem;
 }
 
 .accordionItem {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .accordionHeader {
@@ -161,23 +153,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 0;
-  font-size: 0.9rem;
-  font-weight: 600;
+  padding: 1.2rem 0;
+  font-size: 0.88rem;
+  font-weight: 800;
   text-transform: uppercase;
-  color: var(--foreground);
+  letter-spacing: 0.04em;
+  color: #002855;
+  cursor: pointer;
 }
 
 .accordionContent {
-  padding-bottom: 1.5rem;
-  color: var(--foreground-muted);
-  font-size: 0.95rem;
-  line-height: 1.5;
+  padding-bottom: 1.2rem;
+  color: #4b5563;
+  font-size: 0.92rem;
+  line-height: 1.55;
 }
 
 @media (max-width: 900px) {
   .productLayout {
     flex-direction: column;
+    gap: 2rem;
   }
   .imageSection, .infoSection {
     width: 100%;
@@ -191,7 +186,7 @@
     overflow-x: auto;
   }
   .thumbBtn {
-    width: 60px;
+    width: 65px;
     flex-shrink: 0;
   }
 }

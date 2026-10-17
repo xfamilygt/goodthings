@@ -35,7 +35,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   // Load from localStorage on mount
   useEffect(() => {
-    const savedCart = localStorage.getItem("thebrostoys_cart");
+    const savedCart = localStorage.getItem("goodthings_cart") || localStorage.getItem("thebrostoys_cart");
     if (savedCart) {
       try {
         // eslint-disable-next-line
@@ -50,7 +50,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   // Save to localStorage when cart changes
   useEffect(() => {
     if (isInitialized) {
-      localStorage.setItem("thebrostoys_cart", JSON.stringify(cartItems));
+      localStorage.setItem("goodthings_cart", JSON.stringify(cartItems));
     }
   }, [cartItems, isInitialized]);
 

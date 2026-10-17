@@ -5,6 +5,8 @@ import ImageGallery from "./ImageGallery";
 import Link from "next/link";
 import AddToCartBtn from "../../../components/AddToCartBtn";
 
+import { mockGoodThingsProducts } from "../../../lib/mockProducts";
+
 const API_URL = process.env.API_URL || "http://localhost:8080";
 
 async function getProduct(sku: string) {
@@ -12,28 +14,29 @@ async function getProduct(sku: string) {
     const res = await fetch(`${API_URL}/api/products/sku/${sku}`, {
       cache: "no-store"
     });
-    if (!res.ok) {
-      if (res.status === 404) return null;
-      throw new Error("Failed to fetch product");
+    if (res.ok) {
+      return res.json();
     }
-    return res.json();
   } catch (error) {
     console.error("Error in getProduct:", error);
-    return null;
   }
+
+  // Fallback to mock GoodThings apparel
+  const mockFound = mockGoodThingsProducts.find(p => p.sku === sku);
+  return mockFound || null;
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ sku: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
   const product = await getProduct(resolvedParams.sku);
-  if (!product) return { title: 'Not Found | The Brothers Toys' };
+  if (!product) return { title: 'Not Found | GoodThings' };
   
   return {
-    title: `${product.name} | The Brothers Toys`,
-    description: product.description || "The Brothers Toys collectible",
+    title: `${product.name} | GoodThings`,
+    description: product.description || "GoodThings Colección",
     openGraph: {
       title: product.name,
-      description: product.description || "The Brothers Toys collectible",
+      description: product.description || "GoodThings Colección",
       images: product.images?.[0]?.image_url ? [product.images[0].image_url] : [],
     }
   }

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="100%" height="100%">
+  <defs>
+    <filter id="subtle-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="1" stdDeviation="0.8" flood-color="#00142e" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Old Navy Style Deep Navy Oval -->
+  <ellipse cx="32" cy="32" rx="31" ry="19.5" fill="#002855" />
+  
+  <!-- Subtle border for contrast in dark & light tabs -->
+  <ellipse cx="32" cy="32" rx="30" ry="18.5" fill="none" stroke="#001c3d" stroke-width="1" />
+
+  <!-- Bold Chunky White Typography: GOODTHINGS -->
+  <text
+    x="32"
+    y="36"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    fill="#ffffff"
+    font-family="'Arial Black', 'Impact', 'Montserrat', -apple-system, sans-serif"
+    font-weight="900"
+    font-size="9"
+    letter-spacing="-0.03em"
+    lengthAdjust="spacingAndGlyphs"
+    textLength="51"
+  >GOODTHINGS</text>
+</svg>

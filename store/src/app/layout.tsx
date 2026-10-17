@@ -17,8 +17,13 @@ import { CartProvider } from "../components/CartContext";
 import CartDrawer from "../components/CartDrawer";
 
 export const metadata: Metadata = {
-  title: "The Brothers Toys - Juguetes de Colección y Superhéroes",
-  description: "Encuentra las mejores figuras de acción de Marvel y DC, además de exclusivas ediciones de Hot Wheels.",
+  title: "GoodThings - Moda, Esenciales y Calidad para Toda la Familia",
+  description: "Descubre las últimas tendencias en ropa, jeans, suéteres y promociones exclusivas para toda la familia en GoodThings.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
